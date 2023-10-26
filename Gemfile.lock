@@ -294,7 +294,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (= 6.1.5.1)
-  rmagick
+  rmagick (= 4.2.5)
   rspec-rails
   sass-rails (>= 6)
   sdoc
