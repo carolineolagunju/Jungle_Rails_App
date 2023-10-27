@@ -1,6 +1,9 @@
 class CartsController < ApplicationController
 
   def show
+    if cart.size == 0
+      flash.now[:warning] = 'There are no items in your cart.'
+    end
   end
 
   def add_item
