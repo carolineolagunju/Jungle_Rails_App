@@ -1,0 +1,14 @@
+<h1>New Category</h1>
+
+<%= form_with(model: @category, url: admin_categories_path, method: :post) do |form| %>
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= form.submit "Create Category", class: "btn btn-primary" %>
+  </div>
+<% end %>
+<br>
+<%= link_to 'Back to Categories List', admin_categories_path %>
