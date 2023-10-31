@@ -1,27 +1,21 @@
-<%= form_with model: @user, url: login_path, local: true do |form| %>
+<%= form_with(url: login_path, method: :post) do |f| %>
   <div class="field">
-    <%= form.label :email %>
-    <%= form.email_field :email %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
   </div>
 
   <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
   </div>
 
   <div class="actions">
-    <%= form.submit "Log In" %>
+    <%= f.submit "Login" %>
   </div>
 <% end %>
 
-class ApplicationController < ActionController::Base
-  helper_method :current_user
-
-  private
-
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id])
-  end
-
-  # Add other methods as needed...
-end
+<% if flash.now[:alert].present? %>
+  <div class="alert alert-danger">
+    <%= flash.now[:alert] %>
+  </div>
+<% end %>
