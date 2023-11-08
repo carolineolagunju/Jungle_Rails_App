@@ -1,2 +1,10 @@
-<h1>Sessions#create</h1>
-<p>Find me in app/views/sessions/create.html.erb</p>
+<% if flash[:notice].present? %>
+  <div class="notice" id="notice">
+    <%= flash[:notice] %>
+  </div>
+  <script>
+    setTimeout(() => {
+      window.location.href = '<%= root_path %>';
+    }, 1500);
+  </script>
+<% end %>
