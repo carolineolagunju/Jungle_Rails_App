@@ -19,6 +19,6 @@ class Admin::CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:name, :description) # Adjust permitted attributes
+    params.require(:category).permit(:name, :description)
   end
 end
